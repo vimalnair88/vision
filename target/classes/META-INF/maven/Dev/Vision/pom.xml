@@ -32,6 +32,19 @@
 		  <artifactId>webcam-capture</artifactId>
 		  <version>0.3.11</version>
   </dependency>
+  <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>4.2.4</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20170516</version>
+</dependency>
+	
     
   </dependencies>
 </project>
