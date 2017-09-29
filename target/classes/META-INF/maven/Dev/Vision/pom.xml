@@ -44,7 +44,18 @@
     <artifactId>json</artifactId>
     <version>20170516</version>
 </dependency>
-	
+	<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk</artifactId>
+    <version>1.11.204</version>
+</dependency>
+	<dependency>
+   <groupId>org.apache.httpcomponents</groupId>
+   <artifactId>httpclient</artifactId>
+   <version>4.5.2</version>
+   <scope>runtime</scope>
+ </dependency>
     
   </dependencies>
 </project>
