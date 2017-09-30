@@ -35,9 +35,9 @@ public class AmazonImageStorage {
 		InputStream input = null;
 		try {
 			fileNames = new Stack<String>();
-			bucketName = prop.getProperty("bucketName");
 			input = new FileInputStream("config.properties");
 			prop.load(input);
+			bucketName = prop.getProperty("bucketName");
 			accessKey = prop.getProperty("AmazonAccessKey");
 			secretKey=prop.getProperty("AmazonSecretKey");
 			staticURL=prop.getProperty("staticURL");
