@@ -15,11 +15,6 @@
   </properties>
 
   <dependencies>
-  	<dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.2</version>
-        </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -55,6 +50,11 @@
     <artifactId>aws-java-sdk</artifactId>
     <version>1.11.204</version>
 </dependency>
+<dependency>
+  <groupId>org.apache.httpcomponents</groupId>
+  <artifactId>httpclient</artifactId>
+  <version>4.5.2</version>
+ </dependency>
     
   </dependencies>
 </project>

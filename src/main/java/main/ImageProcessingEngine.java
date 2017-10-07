@@ -6,13 +6,13 @@ import org.json.JSONObject;
 
 public class ImageProcessingEngine {
 	
-	private AmazonImageStorage imageStorage;
 	private ImageAIResultPersistance imageResult;
-	private ImageCapture imageCapture;
 	private ImageProcessing imageProcessing;
 	private JSONObject aiResult;
 	private String requestId;
 	private String data;
+	private ImageCapture imageCapture;
+	private AmazonImageStorage imageStorage;
 	
 	public ImageProcessingEngine(){
 		imageStorage = new AmazonImageStorage();
@@ -21,13 +21,9 @@ public class ImageProcessingEngine {
 		imageProcessing = new ImageProcessing();
 	}
 	
-	public void startOperation(){
+	public void startOperation() throws FileNotFoundException{
 		imageCapture.imageCapture();
-		try {
-			imageStorage.pushImageToStorage();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		imageStorage.pushImageToStorage();
 		String imageUrl = imageStorage.latestImageCaptured();
 		aiResult = imageProcessing.getResultsFromComputerVision(imageUrl);
 		requestId = aiResult.getString("requestId");
@@ -35,8 +31,9 @@ public class ImageProcessingEngine {
 		imageResult.insertItem(requestId, data);		
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		ImageProcessingEngine engine = new ImageProcessingEngine();
 		engine.startOperation();
 	}
+	
 }

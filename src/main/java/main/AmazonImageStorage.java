@@ -1,4 +1,5 @@
 package main;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,6 +8,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 import java.util.Stack;
+
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Protocol;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
@@ -15,11 +19,8 @@ import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
-import com.amazonaws.ClientConfiguration;
-import com.amazonaws.Protocol;
 
 public class AmazonImageStorage {
-	
 	private static String accessKey;
 	private static String secretKey;
 	private static AWSCredentials credentials;
@@ -60,7 +61,7 @@ public class AmazonImageStorage {
 	}
 	
 	public void pushImageToStorage() throws FileNotFoundException{		
-		FileInputStream stream = new FileInputStream("test.jpg");
+		FileInputStream stream = new FileInputStream("testImage.jpg");
 		ObjectMetadata objectMetadata = new ObjectMetadata();
 		String fileName = new SimpleDateFormat("'Vision-'yyyyMMddHHmmss'.jpg'").format(new Date());
 		PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, fileName, stream, objectMetadata);
