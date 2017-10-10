@@ -1,0 +1,6 @@
+main/App.class
+main/ImageCapture.class
+main/AmazonImageStorage.class
+main/ImageAIResultPersistance.class
+main/ImageProcessingEngine.class
+main/ImageProcessing.class
