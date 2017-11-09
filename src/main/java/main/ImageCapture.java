@@ -26,9 +26,18 @@ public class ImageCapture {
 			e.printStackTrace();
 		}
 	}
+	public void getWebcamDetails(){
+		Webcam webcam = Webcam.getDefault();
+		if (webcam != null) {
+			System.out.println("Webcam: " + webcam.getName());
+		} else {
+			System.out.println("No webcam detected");
+		}
+
+	}
 	public static void main(String args[]){
 		ImageCapture imageCapture = new ImageCapture();
-		imageCapture.imageCapture();
+		imageCapture.getWebcamDetails();
 	}
 	
 }

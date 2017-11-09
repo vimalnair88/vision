@@ -61,6 +61,7 @@ public class ImageProcessing {
             {
                 String jsonString = EntityUtils.toString(entity);
                 JSONObject json = new JSONObject(jsonString);
+                json.put("url", url);
                 return json;
             }
         }
